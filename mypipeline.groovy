@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('pull') { 
             steps {
-                    git branch: 'main', changelog: false, poll: false, url: 'https://github.com/chetansomkuwar254/jenkins-b1'
+                    git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Prathamesh19999/jenkin-pub'
                 echo "Cloning the repos"
             }
         }
