@@ -1,16 +1,18 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('pull') { 
             steps {
-                    git branch: 'main', credentialsId: '4564541dsd', url: 'https://github.com/Prathamesh19999/jenkin-pub.git'
+                    git branch: 'main', changelog: false, poll: false, url: 'https://github.com/chetansomkuwar254/jenkins-b1'
                 echo "Cloning the repos"
             }
         }
 
-        stage('Develop')
+        stage('Build')
         {
             steps{
+                sh '/opt/apache-maven-3.9.6/bin/mvn clean package'
+
                 echo "Developing the code "
             }
         }
